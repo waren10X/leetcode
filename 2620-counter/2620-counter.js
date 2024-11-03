@@ -2,7 +2,7 @@ var createCounter = function(n)
 {
     let count;
 
-    count = n
+    count = n;
     return function()
     {
         return count++;
