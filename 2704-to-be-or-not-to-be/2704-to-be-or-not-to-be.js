@@ -12,6 +12,7 @@ var expect = function(val)
                 throw new Error("Not Equal");
             }
         },
+
         notToBe(compareVal)
         {
             if (val !== compareVal)
