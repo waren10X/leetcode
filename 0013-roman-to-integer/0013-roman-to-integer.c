@@ -1,20 +1,34 @@
 int getValue(char c)
 {
     if (c == 'I')
-        return 1;
+    {
+        return (1);
+    }
     if (c == 'V')
-        return 5;
+    {
+        return (5);
+    }
     if (c == 'X')
-        return 10;
+    {
+        return (10);
+    }
     if (c == 'L')
-        return 50;
+    {
+        return (50);
+    }
     if (c == 'C')
-        return 100;
+    {
+        return (100);
+    }
     if (c == 'D')
-        return 500;
+    {
+        return (500);
+    }
     if (c == 'M')
-        return 1000;
-    return 0;
+    {
+        return (1000);
+    }
+    return (0);
 }
 
 int romanToInt(char* s)
@@ -35,7 +49,6 @@ int romanToInt(char* s)
     {
         length++;
     }
-    
     while (i < length)
     {
         currentChar = s[i];
@@ -61,5 +74,5 @@ int romanToInt(char* s)
         }
         i = i + 1;
     }
-    return total;
+    return (total);
 }
