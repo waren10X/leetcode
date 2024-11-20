@@ -1,7 +1,6 @@
 #include <iostream>
 #include <vector>
 #include <string>
-#include <unordered_map>
 
 using namespace std;
 
@@ -10,26 +9,40 @@ class Solution
 public:
     bool areAnagrams(const string& s1, const string& s2)
     {
-        if (s1.size() != s2.size()) return false;
-        
         int charCount[26] = {0};
-        for (char c : s1) charCount[c - 'a']++;
+
+        if (s1.size() != s2.size())
+        {
+            return (false);
+        }
+
+        for (char c : s1)
+        {
+            charCount[c - 'a']++;
+        }
+
         for (char c : s2)
         {
             charCount[c - 'a']--;
-            if (charCount[c - 'a'] < 0) return false;
+            if (charCount[c - 'a'] < 0)
+            {
+                return (false);
+            }
         }
-        return true;
+        return (true);
     }
     
     vector<vector<string>> groupAnagrams(vector<string>& strs)
     {
         vector<vector<string>> result;
-        vector<bool> grouped(strs.size(), false); 
+        vector<bool> grouped(strs.size(), false);
 
         for (int i = 0; i < strs.size(); ++i)
         {
-            if (grouped[i]) continue; 
+            if (grouped[i]) 
+            {
+                continue;
+            }  
             
             vector<string> group = {strs[i]};
             grouped[i] = true;
@@ -46,6 +59,6 @@ public:
             result.push_back(group);
         }
         
-        return result;
+        return (result);
     }
 };
